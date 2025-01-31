@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Startup Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Elegant Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .hero-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: #2e3b4e;
+        }
+
+        .section-subtitle {
+            color: #666;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-cta {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-cta:hover {
+            background-color: #5F6368;
+            transform: scale(1.05);
+        }
+
+        .input-field {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 100%;
+            background-color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #3B82F6;
+            outline: none;
+        }
+
+        .error-message {
+            color: #EF4444;
+            font-size: 0.875rem;
+        }
+
+        .footer-link {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #5F6368;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-white py-6 px-12 shadow-lg">
+        <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+            <div class="text-3xl font-semibold text-gray-800">StartupName</div>
+            <a href="#signup" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium button-cta">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-blue-100 h-screen text-center text-gray-800 flex flex-col justify-center items-center px-6">
+        <h1 class="hero-text text-4xl sm:text-5xl lg:text-6xl font-extrabold max-w-4xl mx-auto">A New Era of Innovation for Startups</h1>
+        <p class="mt-6 text-lg sm:text-xl md:w-2/3 lg:w-1/2 mx-auto leading-relaxed">Discover streamlined, scalable, and modern solutions that empower your startup to grow and succeed effortlessly.</p>
+        <a href="#signup" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium button-cta">Learn More</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6">
+        <div class="text-center">
+            <h2 class="section-title text-3xl">Our Features</h2>
+            <p class="section-subtitle mt-4 text-lg">Designed to elevate your startup experience</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12 max-w-screen-xl mx-auto">
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/100" alt="Feature 1" class="mx-auto mb-6">
+                <h3 class="text-xl font-semibold">Scalable Solutions</h3>
+                <p class="mt-4 text-gray-600">Our platform grows with you, adapting to your needs as your business expands.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/100" alt="Feature 2" class="mx-auto mb-6">
+                <h3 class="text-xl font-semibold">Intuitive Design</h3>
+                <p class="mt-4 text-gray-600">Simple, beautiful interfaces make managing your business easier than ever before.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/100" alt="Feature 3" class="mx-auto mb-6">
+                <h3 class="text-xl font-semibold">Advanced Analytics</h3>
+                <p class="mt-4 text-gray-600">Get real-time insights into your operations with powerful analytics and reports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section id="signup" class="py-16 px-6 bg-gray-50">
+        <div class="text-center">
+            <h2 class="section-title text-3xl">Join Us Today</h2>
+            <p class="section-subtitle mt-4 text-lg">Start your journey with a trusted platform designed for growth</p>
+        </div>
+        <div class="max-w-md mx-auto mt-8 bg-white p-10 rounded-lg shadow-lg">
+            <form id="signupForm">
+                <div>
+                    <label for="name" class="block font-medium text-lg">Full Name</label>
+                    <input type="text" id="name" name="name" class="input-field mt-2" required>
+                    <p id="nameError" class="error-message mt-2 hidden">Please enter your name.</p>
+                </div>
+                <div class="mt-6">
+                    <label for="email" class="block font-medium text-lg">Email Address</label>
+                    <input type="email" id="email" name="email" class="input-field mt-2" required>
+                    <p id="emailError" class="error-message mt-2 hidden">Please enter a valid email address.</p>
+                </div>
+                <div class="mt-6">
+                    <label for="password" class="block font-medium text-lg">Password</label>
+                    <input type="password" id="password" name="password" class="input-field mt-2" required>
+                    <p id="passwordError" class="error-message mt-2 hidden">Password must be at least 6 characters long.</p>
+                </div>
+                <div class="mt-6">
+                    <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300 button-cta">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-white py-6 text-center shadow-lg">
+        <p class="text-gray-700">&copy; 2025 StartupName. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="footer-link mx-4">Privacy Policy</a>
+            <a href="#" class="footer-link mx-4">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Basic Form Validation
+        const form = document.getElementById('signupForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            // Clear previous error messages
+            document.getElementById('nameError').classList.add('hidden');
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('passwordError').classList.add('hidden');
+            
+            let isValid = true;
+
+            // Name Validation
+            const name = document.getElementById('name').value;
+            if (!name) {
+                document.getElementById('nameError').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Email Validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Password Validation
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('passwordError').classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+
+</body>
+</html>
