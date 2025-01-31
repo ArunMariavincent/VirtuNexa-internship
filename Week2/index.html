@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Resume Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+        }
+        .header {
+            background-color: #3b82f6;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid #d1d5db;
+        }
+        .resume-preview {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-label {
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .input-field, .textarea-field {
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            font-size: 1rem;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .input-field:focus, .textarea-field:focus {
+            border-color: #3b82f6;
+            outline: none;
+        }
+        .btn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            background-color: #2563eb;
+        }
+        .preview-heading {
+            font-family: 'Montserrat', sans-serif;
+            color: #2e3b4e;
+        }
+        .resume-text {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            color: #444;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+        }
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 class="text-4xl font-bold">Elegant Resume Builder</h1>
+        <p class="mt-2 text-lg">Craft a professional and beautiful resume in minutes</p>
+    </header>
+
+    <!-- Form Section -->
+    <section class="max-w-4xl mx-auto py-12 px-6">
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-6">Create Your Resume</h2>
+        <form id="resumeForm" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="input-field" placeholder="Your Name" required>
+                    <p id="nameError" class="error-message hidden">Please enter your name.</p>
+                </div>
+                <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="input-field" placeholder="Your Email" required>
+                    <p id="emailError" class="error-message hidden">Please enter a valid email address.</p>
+                </div>
+            </div>
+
+            <div>
+                <label for="experience" class="form-label">Work Experience</label>
+                <textarea id="experience" class="textarea-field" rows="4" placeholder="Describe your work experience" required></textarea>
+            </div>
+
+            <div>
+                <label for="education" class="form-label">Education</label>
+                <textarea id="education" class="textarea-field" rows="4" placeholder="Describe your education" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Generate Resume</button>
+        </form>
+    </section>
+
+    <!-- Resume Preview Section -->
+    <section class="max-w-4xl mx-auto py-12">
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-6">Resume Preview</h2>
+        <div id="resumePreview" class="resume-preview">
+            <h1 id="previewName" class="preview-heading text-2xl font-bold">Arun</h1>
+            <h2 id="previewEmail" class="preview-heading text-xl text-gray-600">arun@example.com</h2>
+            <h3 class="mt-6 font-semibold text-lg">Work Experience</h3>
+            <p id="previewExperience" class="resume-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3 class="mt-6 font-semibold text-lg">Education</h3>
+            <p id="previewEducation" class="resume-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <button id="downloadBtn" class="mt-6 btn">Download Resume</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Elegant Resume Builder. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
