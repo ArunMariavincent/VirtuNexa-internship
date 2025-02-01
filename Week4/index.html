@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Auction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f4f8, #c9d6e3);
+            font-family: 'Inter', sans-serif;
+        }
+        .auction-item {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .auction-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .auction-item img {
+            border-radius: 12px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .auction-item h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #2b6cb0;
+            margin-top: 10px;
+        }
+
+        .auction-item p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-top: 8px;
+        }
+
+        .bid-button {
+            background-color: #e53e3e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 15px;
+        }
+
+        .bid-button:hover {
+            background-color: #c53030;
+            transform: scale(1.05);
+        }
+
+        .countdown {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ed8936;
+        }
+
+        .alert {
+            padding: 12px 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .alert-error {
+            background-color: #f87171;
+            color: white;
+        }
+
+        .alert-success {
+            background-color: #48bb78;
+            color: white;
+        }
+
+        .auction-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center">
+
+    <div class="container w-full max-w-screen-xl mt-10">
+        <h1 class="text-4xl font-semibold text-center text-gray-800 mb-8">Live Auction</h1>
+        <div id="alert-message" class="alert hidden"></div>
+
+        <div id="auctionItems" class="auction-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
